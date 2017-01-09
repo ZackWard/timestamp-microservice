@@ -4,11 +4,26 @@
   "description": "A timestamp microservice project for FreeCodeCamp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Zack Ward",
   "license": "ISC",
   "dependencies": {
+    "chrono-node": "^1.2.5",
     "express": "^4.14.0"
-  }
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZackWard/timestamp-microservice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZackWard/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/ZackWard/timestamp-microservice#readme"
 }
