@@ -28,47 +28,61 @@
 
     <div class="container">
       <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">About</a></li>
+            <li role="presentation"><a href="https://github.com/ZackWard/timestamp-microservice">Code</a></li>
+          </ul>
+        </nav>
         <h3 class="text-muted">FreeCodeCamp Timestamp Microservice</h3>
       </div>
 
       <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        <h1>What does it do?</h1>
+        <p class="lead">This microservice accepts either a natural language date (<code>January 10th, 2017</code>) or a unix timestamp (<code>1484049600</code>) as input. It returns a JSON object containing both a natural language date and a unix timestamp.</p>
       </div>
 
       <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+        <div class="text-center col-lg-12">
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+          <h4>Natural Date Demo</h4>
+          <p><a id="natural-date-demo" class="text-center btn btn-primary" href="#">Testing!</a></p>
 
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <h4>Unix Timestamp Demo</h4>
+          <p><p><a id="unix-timestamp-demo" class="text-center btn btn-primary" href="#">Testing!</a></p></p>
+
+          <h4>Invalid Input Demo</h4>
+          <p><a id="invalid-input-demo" class="text-center btn btn-primary" href="#">Testing!</a></p>
+
         </div>
 
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
       </div>
 
       <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>Built by <a href="https://www.zackward.net">Zack Ward</a></p>
       </footer>
 
     </div> <!-- /container -->
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="static/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      // Set up the natural date demo link
+      var naturalDemoLink = document.getElementById("natural-date-demo");
+      var dateString = new Date().toDateString();
+      naturalDemoLink.setAttribute("href", "/" + dateString);
+      naturalDemoLink.innerText = window.location.href + dateString;
+
+      var unixLink = document.getElementById("unix-timestamp-demo");
+      var unixString = String(new Date().getTime() / 1000);
+      unixLink.setAttribute("href", "/" + unixString);
+      unixLink.innerText = window.location.href + unixString;
+
+      // Set up the invalid input demo link
+      var invalidLink = document.getElementById('invalid-input-demo');
+      invalidLink.setAttribute('href', '/Invalid');
+      invalidLink.innerText = window.location.href + "Invalid";
+    </script>
   </body>
 </html>
