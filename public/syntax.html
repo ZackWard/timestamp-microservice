@@ -70,18 +70,18 @@
     <script>
       // Set up the natural date demo link
       var naturalDemoLink = document.getElementById("natural-date-demo");
-      var dateString = new Date().toDateString();
-      naturalDemoLink.setAttribute("href", "/" + dateString);
-      naturalDemoLink.innerText = window.location.href + dateString;
+      var dateString = window.location.href + new Date().toDateString();
+      naturalDemoLink.setAttribute("href", dateString);
+      naturalDemoLink.innerText = dateString;
 
       var unixLink = document.getElementById("unix-timestamp-demo");
-      var unixString = String(new Date().getTime() / 1000);
-      unixLink.setAttribute("href", "/" + unixString);
-      unixLink.innerText = window.location.href + unixString;
+      var unixString = window.location.href + String(new Date().getTime() / 1000);
+      unixLink.setAttribute("href", unixString);
+      unixLink.innerText = unixString;
 
       // Set up the invalid input demo link
       var invalidLink = document.getElementById('invalid-input-demo');
-      invalidLink.setAttribute('href', '/Invalid');
+      invalidLink.setAttribute('href', window.location.href + "Invalid");
       invalidLink.innerText = window.location.href + "Invalid";
     </script>
   </body>
